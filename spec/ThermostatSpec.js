@@ -82,9 +82,18 @@ describe("Thermostat",function() {
     it("It will not add the temperature when it is at maximum", function(){
       var thermostat = new Thermostat;
       thermostat.turnOff ;
-      thermostat.degree = 32 ; 
+      thermostat.degree = 32 ;
       thermostat.up();
       expect(thermostat.degree).toEqual(32);
+    });
+
+    describe("resetting the temperature",function(){
+      it("The termostat is resetted by the reset method", function(){
+      thermostat = new Thermostat();
+      thermostat.degree = 25;
+      thermostat.reset();
+      expect(thermostat.degree).toEqual(20);
+    });
     });
   });
 

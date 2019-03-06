@@ -29,3 +29,7 @@ Thermostat.prototype.maximumDegree = function(){
   if(this.powerSafeMode === "on"){return 25}
   else if(this.powerSafeMode === "off"){return 32};
 }
+
+Thermostat.prototype.reset = function(){
+  this.degree = 20 ; 
+}
