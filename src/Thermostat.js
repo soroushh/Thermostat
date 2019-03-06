@@ -16,3 +16,7 @@ Thermostat.prototype.down = function(){
 Thermostat.prototype._minimum = function(){
   return this.degree === 10 ;
 }
+
+Thermostat.prototype.turnOff = function(){
+  this.powerSafeMode = "off";
+}
