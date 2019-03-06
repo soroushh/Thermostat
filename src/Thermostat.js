@@ -1,9 +1,11 @@
 function Thermostat(){
   this.degree = 20;
+  this.powerSafeMode = "on";
 }
 
 Thermostat.prototype.up = function(){
   this.dgree = this.degree +1 ;
+
 }
 
 Thermostat.prototype.down = function(){

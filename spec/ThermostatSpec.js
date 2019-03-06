@@ -31,6 +31,16 @@ describe("Thermostat",function() {
       expect(thermostat._minimum()).toEqual(true);
     });
   });
+  describe("power mode safing",function(){
+    var thermostat;
+    beforeEach(function(){
+      thermostat = new Thermostat;
+    });
+    it("The power safe mode is on by default", function(){
+      expect(thermostat.powerSafeMode).toEqual("on");
+      console.log(thermostat.powerSafeMode);
+    });
+  });
 
 
 
