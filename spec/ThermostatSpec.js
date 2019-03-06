@@ -10,7 +10,7 @@ describe("Thermostat",function() {
     it("The termostat temperature increases by up function", function(){
       var thermostat = new Thermostat;
       thermostat.up();
-      expect(thermostat.dgree).toEqual(21);
+      expect(thermostat.degree).toEqual(21);
     });
   });
 
@@ -38,7 +38,6 @@ describe("Thermostat",function() {
     });
     it("The power safe mode is on by default", function(){
       expect(thermostat.powerSafeMode).toEqual("on");
-      console.log(thermostat.powerSafeMode);
     });
     it("We can turn off the power safe mode", function(){
       expect(thermostat.powerSafeMode).toEqual("on");
@@ -71,6 +70,21 @@ describe("Thermostat",function() {
       thermostat.turnOff();
       thermostat.turnOn();
       expect(thermostat.maximumDegree()).toEqual(25);
+    });
+
+    it("It will not add the temperature when it is at maximum", function(){
+      var thermostat = new Thermostat;
+      thermostat.degree = 25;
+      thermostat.up();
+      expect(thermostat.degree).toEqual(25);
+    });
+
+    it("It will not add the temperature when it is at maximum", function(){
+      var thermostat = new Thermostat;
+      thermostat.turnOff ;
+      thermostat.degree = 32 ; 
+      thermostat.up();
+      expect(thermostat.degree).toEqual(32);
     });
   });
 
