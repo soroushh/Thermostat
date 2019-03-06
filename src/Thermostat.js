@@ -1,7 +1,6 @@
 function Thermostat(){
   this.degree = 20;
   this.powerSafeMode = "on";
-  this.maximumDegree = 25;
 }
 
 Thermostat.prototype.up = function(){
@@ -20,10 +19,13 @@ Thermostat.prototype._minimum = function(){
 
 Thermostat.prototype.turnOff = function(){
   this.powerSafeMode = "off";
-  this.maximumDegree = 32 ;
 }
 
 Thermostat.prototype.turnOn = function(){
   this.powerSafeMode = "on";
-  this.maximumDegree = 25 ; 
+}
+
+Thermostat.prototype.maximumDegree = function(){
+  if(this.powerSafeMode === "on"){return 25}
+  else if(this.powerSafeMode === "off"){return 32};
 }

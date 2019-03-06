@@ -58,25 +58,20 @@ describe("Thermostat",function() {
       thermostat = new Thermostat;
     });
     it("It is 25 when powerSafeMode is on", function(){
-      expect(thermostat.maximumDegree).toEqual(25);
+      expect(thermostat.maximumDegree()).toEqual(25);
     });
 
     it("It is 32 when powerSafeMode is off", function(){
       thermostat.turnOff();
-      expect(thermostat.maximumDegree).toEqual(32);
+      expect(thermostat.maximumDegree()).toEqual(32);
     });
 
     it("It will be 25 when we turn it on and off", function(){
       thermostat.turnOn();
       thermostat.turnOff();
       thermostat.turnOn();
-      expect(thermostat.maximumDegree).toEqual(25);
+      expect(thermostat.maximumDegree()).toEqual(25);
     });
-
   });
-
-
-
-
 
 });
