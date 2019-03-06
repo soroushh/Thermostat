@@ -45,6 +45,12 @@ describe("Thermostat",function() {
       thermostat.turnOff();
       expect(thermostat.powerSafeMode).toEqual("off");
     });
+    it("We can turn on the power safe mode after turning off", function(){
+      expect(thermostat.powerSafeMode).toEqual("on");
+      thermostat.turnOff();
+      thermostat.turnOn();
+      expect(thermostat.powerSafeMode).toEqual("on");
+    });
   });
 
 

@@ -20,3 +20,7 @@ Thermostat.prototype._minimum = function(){
 Thermostat.prototype.turnOff = function(){
   this.powerSafeMode = "off";
 }
+
+Thermostat.prototype.turnOn = function(){
+  this.powerSafeMode = "on";
+}
