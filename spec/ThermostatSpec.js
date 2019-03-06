@@ -14,4 +14,12 @@ describe("Thermostat",function() {
     });
   });
 
+  describe("You can decrease the temperature with an down function",function(){
+    it("The termostat temperature decreases by down function", function(){
+      var thermostat = new Thermostat;
+      thermostat.down();
+      expect(thermostat.degree).toEqual(19);
+    });
+  });
+
 });
