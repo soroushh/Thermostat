@@ -31,5 +31,15 @@ Thermostat.prototype.maximumDegree = function(){
 }
 
 Thermostat.prototype.reset = function(){
-  this.degree = 20 ; 
+  this.degree = 20 ;
+}
+
+Thermostat.prototype.currentEnergyUsage = function(){
+  if(this.degree <18){
+    return "low_usage";
+  }
+  else if(this.degree <25){
+    return "medium_usage";
+  }
+  else{return "high_usage";}
 }

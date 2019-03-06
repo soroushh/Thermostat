@@ -96,5 +96,27 @@ describe("Thermostat",function() {
     });
     });
   });
+  describe("It shows the enrgy usage",function(){
+    beforeEach(function(){
+      thermostat = new Thermostat ;
+    });
+    it("It is low usage when temperature less than 18",function(){
+      thermostat.degree = 15;
+      expect(thermostat.currentEnergyUsage()).toEqual("low_usage")
+    });
+    it("It is medium usage when temperature is less than 25",function(){
+      thermostat.degree = 21;
+      expect(thermostat.currentEnergyUsage()).toEqual("medium_usage")
+    });
+
+    it("It is high usage when temperature is less than 25",function(){
+      thermostat.degree = 27;
+      expect(thermostat.currentEnergyUsage()).toEqual("high_usage")
+    });
+
+
+
+
+  });
 
 });
