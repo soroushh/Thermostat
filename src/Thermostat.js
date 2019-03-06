@@ -7,5 +7,10 @@ Thermostat.prototype.up = function(){
 }
 
 Thermostat.prototype.down = function(){
-  this.degree = this.degree - 1 ; 
+  if(this._minimum()=== false){
+  this.degree = this.degree - 1 ;}
+}
+
+Thermostat.prototype._minimum = function(){
+  return this.degree === 10 ;
 }

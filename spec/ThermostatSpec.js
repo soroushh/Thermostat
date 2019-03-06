@@ -22,4 +22,16 @@ describe("Thermostat",function() {
     });
   });
 
+  describe("The minimum behaviour is controlled",function(){
+    it("The termostat temperature decreases by down function", function(){
+      var thermostat = new Thermostat;
+      thermostat.degree = 10;
+      thermostat.down();
+      expect(thermostat.degree).toEqual(10);
+      expect(thermostat._minimum()).toEqual(true);
+    });
+  });
+
+
+
 });
