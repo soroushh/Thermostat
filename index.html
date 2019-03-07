@@ -3,7 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script >
+      $(document).ready(function() {
+        var thermostat = new Thermostat();
+        $("#temperature").text(thermostat.degree);
+        $("#temperature-up").on('click',function(){
+          thermostat.up();
+          $("#temperature").text(thermostat.degree);
+        });
+        $("#temperature-down").on('click',function(){
+          thermostat.down();
+          $("#temperature").text(thermostat.degree);
+        });
+      });
+
+
     </script>
   </head>
   <body>
