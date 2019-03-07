@@ -16,6 +16,11 @@
           thermostat.down();
           $("#temperature").text(thermostat.degree);
         });
+        $("#powersaving-off").on('click',function(){
+          thermostat.turnOff();
+          $("#temperature").text(thermostat.degree);
+          $("#power-saving-status").text("off")
+        });
       });
 
 
