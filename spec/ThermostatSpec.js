@@ -113,10 +113,14 @@ describe("Thermostat",function() {
       thermostat.degree = 27;
       expect(thermostat.currentEnergyUsage()).toEqual("high_usage")
     });
-
-
-
-
+  });
+  describe("showing the temperature",function(){
+    beforeEach(function(){
+      thermostat = new Thermostat ;
+    });
+    it("It is high usage when temperature is less than 25",function(){
+      expect(thermostat.showTemperature()).toEqual(20);
+    });
   });
 
 });

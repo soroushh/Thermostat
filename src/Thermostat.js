@@ -43,3 +43,7 @@ Thermostat.prototype.currentEnergyUsage = function(){
   }
   else{return "high_usage";}
 }
+
+Thermostat.prototype.showTemperature = function(){
+  return(this.degree);
+}
