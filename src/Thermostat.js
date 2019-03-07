@@ -19,10 +19,14 @@ Thermostat.prototype._minimum = function(){
 
 Thermostat.prototype.turnOff = function(){
   this.powerSafeMode = "off";
+
 }
 
 Thermostat.prototype.turnOn = function(){
   this.powerSafeMode = "on";
+  if(this.degree > 25){
+    this.degree = 25;
+  }
 }
 
 Thermostat.prototype.maximumDegree = function(){
