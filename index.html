@@ -31,9 +31,10 @@
           thermostat.reset();
           $("#temperature").text(thermostat.degree);
         });
-        $("#current").on('click',function(){
-          $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=d07da5804b63c7c44f578f9380d227ae',function(data){
-            $("#current-temperature").text(data.main.temp-273);
+        $('#current-city').change(function() {
+          var city = $('#current-city').val();
+          $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+          $('#current-temperature').text(data.main.temp)
           });
         });
       });
@@ -44,7 +45,15 @@
   <body>
     <section>
       <h1 id="temperature"></h1>
-      <h1 id = "current-temperature"></h1>
+      <section>
+        <h1>Current temperature: <span id="current-temperature">20</span></h1>
+        <select id="current-city">
+           <option value="london">London</option>
+           <option value="newyork">New York</option>
+           <option value="paris">Paris</option>
+           <option value="tokyo">Tokyo</option>
+        </select>
+</section>
       <p>
         <button id="current">Current</button>
         <button id="temperature-up">+</button>
