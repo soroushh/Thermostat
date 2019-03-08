@@ -36,7 +36,7 @@
           $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
           $('#current-temperature').text(data.main.temp)
           });
-        });
+       });
       });
 
 
@@ -64,6 +64,7 @@
         <button id="powersaving-off">PSM off</button>
       </p>
     </section>
+    <img src="Screenshot 2019-03-08 at 16.39.57.png">
     <script src="src/Thermostat.js"></script>
   </body>
 </html>
