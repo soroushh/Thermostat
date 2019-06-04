@@ -4,66 +4,37 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script >
-      $(document).ready(function() {
-        var thermostat = new Thermostat();
-        $("#temperature").text(thermostat.degree);
-        $("#temperature-up").on('click',function(){
-          thermostat.up();
-          $("#temperature").text(thermostat.degree);
-        });
-        $("#temperature-down").on('click',function(){
-          thermostat.down();
-          $("#temperature").text(thermostat.degree);
-        });
-        $("#powersaving-off").on('click',function(){
-          thermostat.turnOff();
-          $("#temperature").text(thermostat.degree);
-          $("#power-saving-status").text("off")
-        });
-        $("#powersaving-on").on('click',function(){
-          thermostat.turnOn();
-          $("#power-saving-status").text("on")
-          $("#temperature").text(thermostat.degree)
-        });
-
-        $("#temperature-reset").on('click',function(){
-          thermostat.reset();
-          $("#temperature").text(thermostat.degree);
-        });
-        $('#current-city').change(function() {
-          var city = $('#current-city').val();
-          $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-          $('#current-temperature').text(data.main.temp)
-          });
-       });
-      });
-
-
-    </script>
+    <script src="src/Thermostat.js"></script>
+    <script src="src/dom.js"></script>
+    <style>
+    div{text-align: center}
+    body {background-color: #F6E2DD}
+    </style>
   </head>
   <body>
-    <section>
-      <h1 id="temperature"></h1>
+    <div>
       <section>
-        <h1>Current temperature: <span id="current-temperature">20</span></h1>
-        <select id="current-city">
-           <option value="london">London</option>
-           <option value="paris">Paris</option>
-           <option value="tokyo">Tokyo</option>
-        </select>
-</section>
-      <p>
-        <button id="current">Current</button>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
-      </p>
-    </section>
-    <img src="Screenshot 2019-03-08 at 16.39.57.png">
-    <script src="src/Thermostat.js"></script>
+        <p> Thermostat's setting temperature: </p>
+        <h1 id="temperature"></h1>
+        <section>
+          <h1>Current city temperature: <span id="current-temperature">20</span></h1>
+          <select id="current-city">
+             <option value="london">London</option>
+             <option value="paris">Paris</option>
+             <option value="tokyo">Tokyo</option>
+          </select>
+        </section>
+        <p>
+          <button id="current">Current</button>
+          <button id="temperature-up">+</button>
+          <button id="temperature-down">-</button>
+          <button id="temperature-reset">reset</button>
+          power saving mode is <span id="power-saving-status">on</span>
+          <button id="powersaving-on">PSM on</button>
+          <button id="powersaving-off">PSM off</button>
+        </p>
+      </section>
+      <img src="Screenshot 2019-03-08 at 16.39.57.png">
+    </div>
   </body>
 </html>
